@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
-    const { chef_name, chef_picture
+
+    let { id } = useParams()
+    const { chef_id, chef_name, chef_picture
         , likes, num_recipes, years_of_experience } = chef;
 
 
@@ -16,7 +18,7 @@ const ChefCard = ({ chef }) => {
                 <p className='font-bold'>Numbers of recipes: {num_recipes}</p>
                 <p className='font-bold'>Likes: {likes}</p>
                 <div className="card-actions justify-end">
-                    <Link ><button className="btn btn-primary">View Recipes</button></Link>
+                    <Link to={`${chef_id}`}><button className="btn btn-primary">View Recipes</button></Link>
                 </div>
             </div>
         </div>

@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/:id',
         element: <ChefRecipe></ChefRecipe>,
-        loader: ({ params }) => fetch(`http://localhost:5000/recipe/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
       }
     ],
   },
