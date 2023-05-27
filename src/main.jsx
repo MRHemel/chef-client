@@ -9,6 +9,9 @@ import {
 import Main from './layout/Main.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
+import Blog from './Components/Blog/Blog.jsx';
+import ChefSection from './Components/ChefSection/ChefSection.jsx';
+import ChefCard from './Components/ChefCard/ChefCard.jsx';
 
 
 const router = createBrowserRouter([
@@ -20,7 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/chef')
       },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      }
     ],
   },
 ]);
