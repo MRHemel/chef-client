@@ -12,6 +12,7 @@ import Home from './Components/Home/Home.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import ChefSection from './Components/ChefSection/ChefSection.jsx';
 import ChefCard from './Components/ChefCard/ChefCard.jsx';
+import ChefRecipe from './Components/ChefRecipe/ChefRecipe.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/:id',
+        element: <ChefRecipe></ChefRecipe>,
+        loader: ({ params }) => fetch(`http://localhost:5000/recipe/${params.id}`)
       }
     ],
   },

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
-    const { chef_id, chef_name, chef_picture
+    const { chef_name, chef_picture
         , likes, num_recipes, years_of_experience } = chef;
 
 
