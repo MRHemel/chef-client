@@ -1,0 +1,11 @@
+.banner {
+    background-image: url(https://img.freepik.com/free-photo/medium-shot-chef-wearing-gloves_23-2148723249.jpg?w=1060&t=st=1685195942~exp=1685196542~hmac=c6ed5993ac6742810ea1eccff672177754d5b21fb8128742c398f061b2bb1b99);
+    background-repeat: no-repeat;
+    background-position: cover;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.banner-details {}
