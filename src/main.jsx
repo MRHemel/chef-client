@@ -13,6 +13,9 @@ import Blog from './Components/Blog/Blog.jsx';
 import ChefSection from './Components/ChefSection/ChefSection.jsx';
 import ChefCard from './Components/ChefCard/ChefCard.jsx';
 import ChefRecipe from './Components/ChefRecipe/ChefRecipe.jsx';
+import AuthProvider from './Components/provider/AuthProvider.jsx';
+import Login from './Components/Login/Login.jsx';
+import Register from './Components/Register/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -34,6 +37,14 @@ const router = createBrowserRouter([
         path: '/:id',
         element: <ChefRecipe></ChefRecipe>,
         loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ],
   },
@@ -41,6 +52,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider> <RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
