@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyALA5MQIrozKEWT9JfjqeKlhROdjoW-dOc",
-    authDomain: "chef-recipe-fair.firebaseapp.com",
-    projectId: "chef-recipe-fair",
-    storageBucket: "chef-recipe-fair.appspot.com",
-    messagingSenderId: "1033772715958",
-    appId: "1:1033772715958:web:cd068d101242d9a7bdfb17"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_APPID,
+    appId: import.meta.env.VITE_MESSAGINGSENDERID
 };
 
 // Initialize Firebase
