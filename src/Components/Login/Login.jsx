@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Form } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { Result } from 'postcss';
 
@@ -9,6 +9,9 @@ const Login = () => {
 
 
     const { signIn } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
         setError('')
@@ -22,6 +25,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error)
@@ -50,6 +54,7 @@ const Login = () => {
                     <div className="card-actions justify-center">
                         <button className="btn btn-primary">Login</button>
                     </div>
+                    <p>Don't have registered account?Then <Link className='text-blue-400' to={'/register'}>Register</Link> </p>
                     <p className='text-rose-400'>{error.message}</p>
                 </div>
             </div>
